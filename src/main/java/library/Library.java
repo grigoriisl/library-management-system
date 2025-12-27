@@ -171,5 +171,18 @@ public class Library {
         "Выдано: %d",
         total, available, borrowed
     );
-}
+    }
+    public boolean removeBook(int id) {
+    Book book = findBookById(id);
+    if (book != null) {
+        books.remove(book);
+        operationLog.addEntry(
+            OperationLog.OperationType.ADD_BOOK, // или создайте новый тип
+            String.format("Удалена книга: \"%s\" (ID: %d)", 
+                book.getTitle(), book.getId())
+        );
+        return true;
+    }
+    return false;
+    }
 }
