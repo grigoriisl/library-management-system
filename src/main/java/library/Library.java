@@ -185,4 +185,15 @@ public class Library {
     }
     return false;
     }
+    public boolean updateBook(int id, Book newData) {
+    Book book = findBookById(id);
+    if (book != null) {
+        // В реальном приложении нужно было бы обновлять поля,
+        // но для простоты заменим объект
+        books.remove(book);
+        books.add(newData);
+        return true;
+    }
+    return false;
+   }
 }
