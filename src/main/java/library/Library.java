@@ -85,6 +85,7 @@ public class Library {
         }
     }
     
+    // Конструктор
     public Library() {
         this.books = new ArrayList<>();
         this.operationLog = new OperationLog();
