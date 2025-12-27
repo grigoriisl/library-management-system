@@ -156,4 +156,20 @@ public class Library {
     public List<Book> getAllBooks() {
         return new ArrayList<>(books);
     }
+
+    public String getStatistics() {
+    int total = books.size();
+    int available = (int) books.stream()
+                               .filter(Book::isAvailable)
+                               .count();
+    int borrowed = total - available;
+    
+    return String.format(
+        "Общая статистика:\n" +
+        "Всего книг: %d\n" +
+        "Доступно: %d\n" +
+        "Выдано: %d",
+        total, available, borrowed
+    );
+}
 }
