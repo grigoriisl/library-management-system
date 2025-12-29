@@ -44,7 +44,8 @@ public class Book {
     public void setAvailable(boolean available) {
         this.available = available;
     }
-    
+
+    @Override
     public String toString() {
         String status = available ? "Доступна" : "Выдана";
         return String.format(
